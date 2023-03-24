@@ -48,7 +48,7 @@ class Login_page(Base):
         print("Нажать кнопку войти")
 
     # Methods
-
+    """Ввод информации пользователя и вход в учетную запись"""
     def authorization(self):
         self.input_user_email("test1@gmail.com")
         self.input_password("66677767")

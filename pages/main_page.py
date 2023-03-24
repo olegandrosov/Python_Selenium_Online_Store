@@ -28,7 +28,7 @@ class Main_page(Base):
         self.get_login_page_button().click()
 
     # Methods
-
+    """Открытие главной страницы магазина и переход на страницу авторизации"""
     def enter_login_page(self):
         self.driver.get(self.url_main)
         self.driver.maximize_window()

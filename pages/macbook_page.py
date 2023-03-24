@@ -125,7 +125,8 @@ class Macbook_page(Base):
         return mac_name_cart_value
 
     # Methods
-
+    """Проверка работы фильтров, добавление товара в корзину и переход в нее, сравнение цены и наименования товара между 
+    страницей карточки товара и корзиной"""
     def add_macbook(self):
         self.move_slider(self.get_right_slider(), -10, 0)
         self.click_confirm_filter_button()

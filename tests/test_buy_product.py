@@ -16,22 +16,27 @@ def test_select_product_1(set_module):
     options = webdriver.ChromeOptions()
     options.add_experimental_option("detach", True)
     options.add_experimental_option('excludeSwitches', ['enable-logging'])
-    g = Service('C:\\Users\\Oleg\\PycharmProjects\\resource\\chromedriver.exe')
+    g = Service()
     driver = webdriver.Chrome(options=options, service=g)
 
     print("Begin Test 1")
 
     mp = Main_page(driver)
+    """Open main url and move to login page"""
     mp.enter_login_page()
 
     lp = Login_page(driver)
+    """Make authorization"""
     lp.authorization()
 
     np = Notebook_page(driver)
+    """Move to laptops page and select apple products"""
     np.select_macbook()
 
     mp = Macbook_page(driver)
+    """Select macbook and move to cart"""
     mp.add_macbook()
 
     cp = Cart_page(driver)
+    """Finish purchase and return to the homepage"""
     cp.cart_options()

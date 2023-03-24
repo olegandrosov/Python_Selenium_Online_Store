@@ -38,7 +38,7 @@ class Notebook_page(Base):
         print("Переход на страницу макбуков")
 
     # Methods
-
+    """Переход на страницу ноутбуков и выбор ноутбуков марки Apple"""
     def select_macbook(self):
         self.click_laptop_button()
         self.click_macbook_button()

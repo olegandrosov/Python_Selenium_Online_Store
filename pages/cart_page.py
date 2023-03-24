@@ -56,7 +56,8 @@ class Cart_page(Base):
         print("Вернулись на главную страницу магазина")
 
     # Methods
-
+    """Проверка доступных магазинов, добавление комментария к заказу, очистка корзины, возвращение на главную 
+    страницу"""
     def cart_options(self):
         self.click_select_magazine()
         self.input_comment("Заберу заказ после 15:00")
@@ -64,4 +65,3 @@ class Cart_page(Base):
         self.assert_word(self.get_empty_cart_word(), "Ваша корзина пуста!")
         self.click_get_logo_company()
         self.get_screenshot()
-        self.driver.close()
