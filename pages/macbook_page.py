@@ -1,11 +1,13 @@
 import time
 
+import allure
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from base.base_class import Base
+from utilities.logger import Logger
 
 
 class Macbook_page(Base):
@@ -128,21 +130,24 @@ class Macbook_page(Base):
     """Проверка работы фильтров, добавление товара в корзину и переход в нее, сравнение цены и наименования товара между 
     страницей карточки товара и корзиной"""
     def add_macbook(self):
-        self.move_slider(self.get_right_slider(), -10, 0)
-        self.click_confirm_filter_button()
-        self.click_diagonal_13_checkbox()
-        self.click_confirm_filter_button()
-        self.click_select_macbook_air()
-        self.get_mac_name_main()
-        self.get_mac_price_main()
-        # self.assert_word(self.get_mac_word(), "Ноутбук Apple MacBook Air 13'' FHD M1 7-core/8Gb/256Gb")
-        self.click_add_to_cart_macbook()
-        self.click_cart_button()
-        self.click_cart_open()
-        self.get_mac_name_cart()
-        self.get_mac_price_cart()
-        self.assert_text(mac_name_main_value, mac_name_cart_value)
-        self.assert_price(mac_price_1_value, mac_price_2_value)
-        self.assert_url("https://xtel-lg.com/index.php?route=checkout/buy")
-        # self.assert_word(self.get_mac_cart_word(), "Ноутбук Apple MacBook Air 13'' FHD M1 7-core/8Gb/256Gb")
-        # self.driver.close()
+        with allure.step("Add macbook"):
+            Logger.add_start_step(method="add_macbook")
+            self.move_slider(self.get_right_slider(), -10, 0)
+            self.click_confirm_filter_button()
+            self.click_diagonal_13_checkbox()
+            self.click_confirm_filter_button()
+            self.click_select_macbook_air()
+            self.get_mac_name_main()
+            self.get_mac_price_main()
+            # self.assert_word(self.get_mac_word(), "Ноутбук Apple MacBook Air 13'' FHD M1 7-core/8Gb/256Gb")
+            self.click_add_to_cart_macbook()
+            self.click_cart_button()
+            self.click_cart_open()
+            self.get_mac_name_cart()
+            self.get_mac_price_cart()
+            self.assert_text(mac_name_main_value, mac_name_cart_value)
+            self.assert_price(mac_price_1_value, mac_price_2_value)
+            self.assert_url("https://xtel-lg.com/index.php?route=checkout/buy")
+            # self.assert_word(self.get_mac_cart_word(), "Ноутбук Apple MacBook Air 13'' FHD M1 7-core/8Gb/256Gb")
+            # self.driver.close()
+            Logger.add_end_step(url=self.driver.current_url, method="add_macbook")

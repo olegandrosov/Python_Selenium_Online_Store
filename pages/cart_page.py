@@ -1,9 +1,12 @@
 import time
+
+import allure
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from base.base_class import Base
+from utilities.logger import Logger
 
 
 class Cart_page(Base):
@@ -59,9 +62,12 @@ class Cart_page(Base):
     """Проверка доступных магазинов, добавление комментария к заказу, очистка корзины, возвращение на главную 
     страницу"""
     def cart_options(self):
-        self.click_select_magazine()
-        self.input_comment("Заберу заказ после 15:00")
-        self.click_delete_button()
-        self.assert_word(self.get_empty_cart_word(), "Ваша корзина пуста!")
-        self.click_get_logo_company()
-        self.get_screenshot()
+        with allure.step("Cart options"):
+            Logger.add_start_step(method="cart_options")
+            self.click_select_magazine()
+            self.input_comment("Заберу заказ после 15:00")
+            self.click_delete_button()
+            self.assert_word(self.get_empty_cart_word(), "Ваша корзина пуста!")
+            self.click_get_logo_company()
+            self.get_screenshot()
+            Logger.add_end_step(url=self.driver.current_url, method="cart_options")

@@ -1,0 +1,5 @@
+Enter system
+Begin Test 1
+Current url https://xtel-lg.com/
+https://xtel-lg.com/login/ идентичен https://xtel-lg.com/login/
+Exit system

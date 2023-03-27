@@ -1,11 +1,13 @@
 import time
 
+import allure
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from base.base_class import Base
+from utilities.logger import Logger
 
 
 class Notebook_page(Base):
@@ -40,5 +42,8 @@ class Notebook_page(Base):
     # Methods
     """Переход на страницу ноутбуков и выбор ноутбуков марки Apple"""
     def select_macbook(self):
-        self.click_laptop_button()
-        self.click_macbook_button()
+        with allure.step("Select macbook"):
+            Logger.add_start_step(method="select_macbook")
+            self.click_laptop_button()
+            self.click_macbook_button()
+            Logger.add_end_step(url=self.driver.current_url, method="select_macbook")

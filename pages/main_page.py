@@ -1,8 +1,9 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
+import allure
 from base.base_class import Base
+from utilities.logger import Logger
 
 
 class Main_page(Base):
@@ -30,9 +31,11 @@ class Main_page(Base):
     # Methods
     """Открытие главной страницы магазина и переход на страницу авторизации"""
     def enter_login_page(self):
-        self.driver.get(self.url_main)
-        self.driver.maximize_window()
-        self.get_current_url()
-        self.click_login_page_button()
-        self.assert_url("https://xtel-lg.com/login/")
-
+        with allure.step("Enter login page"):
+            Logger.add_start_step(method="enter_login_page")
+            self.driver.get(self.url_main)
+            self.driver.maximize_window()
+            self.get_current_url()
+            self.click_login_page_button()
+            self.assert_url("https://xtel-lg.com/login/")
+            Logger.add_end_step(url=self.driver.current_url, method="enter_login_page")

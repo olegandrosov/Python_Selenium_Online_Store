@@ -1,0 +1,55 @@
+
+-----
+Test: tests/test_buy_product.py::test_select_product_1 (call)
+Start time: 2023-03-27 10:16:44.447557
+Start name method: enter_login_page
+
+End time: 2023-03-27 10:16:48.983972
+End name method: enter_login_page
+URL: https://xtel-lg.com/login/
+
+-----
+
+-----
+Test: tests/test_buy_product.py::test_select_product_1 (call)
+Start time: 2023-03-27 10:16:48.984972
+Start name method: authorization
+
+End time: 2023-03-27 10:16:51.323571
+End name method: authorization
+URL: https://xtel-lg.com/my-account/
+
+-----
+
+-----
+Test: tests/test_buy_product.py::test_select_product_1 (call)
+Start time: 2023-03-27 10:16:51.323571
+Start name method: select_macbook
+
+End time: 2023-03-27 10:16:54.459610
+End name method: select_macbook
+URL: https://xtel-lg.com/noutbuki/macbook/
+
+-----
+
+-----
+Test: tests/test_buy_product.py::test_select_product_1 (call)
+Start time: 2023-03-27 10:16:54.460609
+Start name method: add_macbook
+
+End time: 2023-03-27 10:17:01.559437
+End name method: add_macbook
+URL: https://xtel-lg.com/index.php?route=checkout/buy
+
+-----
+
+-----
+Test: tests/test_buy_product.py::test_select_product_1 (call)
+Start time: 2023-03-27 10:17:01.560437
+Start name method: cart_options
+
+End time: 2023-03-27 10:17:05.362607
+End name method: cart_options
+URL: https://xtel-lg.com/
+
+-----
